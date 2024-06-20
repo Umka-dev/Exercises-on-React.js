@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function WindowSizeComponent() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    // Обработчик изменения размера окна
+    // Window resizing handler
     function handleResize() {
       setWindowWidth(window.innerWidth);
     }
 
-    // Подписка на событие изменения размера окна
-    window.addEventListener("resize", handleResize);
+    // Subscribe to a window resize event
+    window.addEventListener('resize', handleResize);
 
-    // Функция очистки: отписка от события изменения размера окна
+    // Cleanup function: unsubscribe from window resize event
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []); // Пустой массив зависимостей, эффект выполняется только один раз
+  }, []); // Empty dependency array, effect executed only once
 
   return (
     <div>
