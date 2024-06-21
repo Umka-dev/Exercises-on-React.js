@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function WindowSizeComponent({ onResize }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -10,23 +10,24 @@ function WindowSizeComponent({ onResize }) {
       const newWidth = window.innerWidth;
       setWindowWidth(newWidth);
 
+      // Detecting device type depending on screen width
       const deviceType =
-        newWidth <= 600 ? "mobile" : newWidth <= 900 ? "tablet" : "pc";
+        newWidth <= 600 ? 'mobile' : newWidth <= 900 ? 'tablet' : 'pc';
       setDevice(deviceType);
       onResize(deviceType);
     }
 
-    console.log("Current device: " + device);
+    console.log('Current device: ' + device);
 
     // Subscribe to a window resize event
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     // Initialization when the component is first loaded
     handleResize();
 
     // Cleanup function: unsubscribe from window resize event
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, [windowWidth, onResize]); // Effect depends on screen size change and props - onResize
 
