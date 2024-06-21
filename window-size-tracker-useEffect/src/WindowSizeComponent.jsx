@@ -11,13 +11,15 @@ function WindowSizeComponent({ onResize }) {
       setWindowWidth(newWidth);
 
       // Detecting device type depending on screen width
-      const deviceType =
+      const newDevice =
         newWidth <= 600 ? 'mobile' : newWidth <= 900 ? 'tablet' : 'pc';
-      setDevice(deviceType);
-      onResize(deviceType);
-    }
 
-    console.log('Current device: ' + device);
+      // Make sure the callback is only called when the device changes
+      if (newDevice !== device) {
+        setDevice(newDevice);
+        onResize(newDevice);
+      }
+    }
 
     // Subscribe to a window resize event
     window.addEventListener('resize', handleResize);
@@ -25,11 +27,13 @@ function WindowSizeComponent({ onResize }) {
     // Initialization when the component is first loaded
     handleResize();
 
+    // console.log("Current device: " + device);
+
     // Cleanup function: unsubscribe from window resize event
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [windowWidth, onResize]); // Effect depends on screen size change and props - onResize
+  }, [device, onResize]); // Effect depends on device type and callback onResize
 
   return (
     <div>
