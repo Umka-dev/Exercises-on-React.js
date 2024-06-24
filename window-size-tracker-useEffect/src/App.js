@@ -5,12 +5,14 @@ import UpdateBgColor from "./UpdateBgColor";
 
 function App() {
   const [bgColor, setBgColor] = useState("");
-  const [device, setDevice] = useState();
+  const [device, setDevice] = useState("");
 
+  // Handles device type changes
   const handleDeviceChange = (device) => {
     setDevice(device);
   };
 
+  // Handles background color changes
   const handleBgColorChange = (color) => {
     setBgColor(color);
   };
