@@ -1,4 +1,4 @@
-import "../public/styles.css";
+import "./styles.css";
 import React, { useState, useCallback } from "react";
 import WindowSizeComponent from "./WindowSizeComponent";
 import UpdateBgColor from "./UpdateBgColor";
