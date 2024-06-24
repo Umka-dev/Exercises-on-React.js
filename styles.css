@@ -1,0 +1,111 @@
+body {
+  font-family: Mukta, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Bitter, serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 50px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 38px;
+  letter-spacing: 0px;
+}
+
+h4 {
+  font-size: 30px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-size: 24px;
+  letter-spacing: 0.25px;
+}
+
+h6 {
+  font-size: 20px;
+  letter-spacing: 0px;
+}
+
+code {
+  color: #e95400;
+  font-weight: bold;
+}
+
+hr {
+  margin: 80px 0;
+}
+
+.hero {
+  background-color: #863ae8;
+  height: 100vh;
+  color: white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  width: 75%;
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+.hero p {
+  width: 75%;
+  max-width: 900px;
+  margin: 8px;
+}
+
+.hero hr {
+  width: 30%;
+  margin: 32px 0;
+}
+
+.hero a {
+  /* text-decoration: none; */
+  color: white;
+}
+
+.hero ul {
+  list-style: decimal;
+  text-align: left;
+}
+
+.hero ul li {
+  margin-bottom: 1rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #863ae8;
+  color: white;
+  font-size: 16px;
+}
