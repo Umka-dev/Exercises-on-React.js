@@ -1,21 +1,21 @@
-import React, { useEffect } from "react";
-import WindowSizeComponent from "./WindowSizeComponent";
+import React, { useState, useEffect } from 'react';
 
 // Function to update color depending on device
-function UpdateBgColor({ device, onBgColorChange }) {
+function UpdateBgColor({ device }) {
+  const [bgColor, setBgColor] = useState('');
   useEffect(() => {
     const color =
-      device === "mobile"
-        ? "lightblue"
-        : device === "tablet"
-        ? "lightgreen"
-        : device === "pc"
-        ? "lightcoral"
-        : "white";
+      device === 'mobile'
+        ? 'lightblue'
+        : device === 'tablet'
+        ? 'lightgreen'
+        : device === 'pc'
+        ? 'lightcoral'
+        : 'white';
+    setBgColor(color);
+    document.body.style.backgroundColor = color;
+  }, [device]);
 
-    onBgColorChange(color);
-  }, [device, onBgColorChange]);
-
-  return null;
+  return <p>Current background color: {bgColor}</p>;
 }
 export default UpdateBgColor;
