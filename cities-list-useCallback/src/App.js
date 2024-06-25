@@ -1,5 +1,5 @@
 import "./styles.css";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { CitiesList } from "./CitiesList";
 
 const listOfCities = ["Lisbon", "Tokyo", "Berlin", "Rotterdam", "Jakarta"];
@@ -17,11 +17,14 @@ const App = () => {
     setName(event.target.value);
   };
 
-  const handleRemoveClick = (item) => {
-    const filteredList = list.filter((listItem) => listItem !== item);
+  const handleRemoveClick = useCallback(
+    (item) => {
+      const filteredList = list.filter((listItem) => listItem !== item);
 
-    setList(filteredList);
-  };
+      setList(filteredList);
+    },
+    [list]
+  );
 
   console.log("Page render");
 
