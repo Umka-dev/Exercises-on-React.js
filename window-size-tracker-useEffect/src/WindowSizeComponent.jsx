@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import DeviceContext from './DeviceContext';
 
-function WindowSizeComponent({ device, onDeviceChange }) {
+function WindowSizeComponent({ onDeviceChange }) {
+  const device = useContext(DeviceContext);
+  // console.log("Device from context: " + device);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
