@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -27,7 +27,8 @@ const GlobalStyles = createGlobalStyle`
   input.custom-input {
     padding: 10px;
     margin: 10px;
-    width: 20%;
+    width: 50%;
+    max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }

@@ -1,20 +1,21 @@
-import React from "react";
-import { City } from "./City";
-import Container from "@mui/material/Container";
-import List from "@mui/material/List";
-import styled from "styled-components";
+import React from 'react';
+import { City } from './City';
+import Container from '@mui/material/Container';
+import List from '@mui/material/List';
+import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
   padding: 16px;
 `;
 
 const StyledList = styled(List)`
-  width: 30%;
+  text-align: left;
+  width: 100%;
   border-radius: 5px;
   padding: 5px;
   margin: 0;
@@ -22,7 +23,7 @@ const StyledList = styled(List)`
 `;
 
 export const CityList = React.memo(({ list, onRemoveClick }) => {
-  console.log("List render");
+  console.log('List render');
 
   return (
     <StyledContainer>
