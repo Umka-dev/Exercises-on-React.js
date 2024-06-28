@@ -1,6 +1,5 @@
-// import "./styles.css";
 import React, { useState, useCallback } from 'react';
-import { CitiesList } from './CitiesList';
+import { CityList } from './CityList';
 import GlobalStyles from './GlobalStyles';
 
 const listOfCities = ['Lisbon', 'Tokyo', 'Berlin', 'Rotterdam', 'Jakarta'];
@@ -40,7 +39,7 @@ const App = () => {
           onChange={handleChange}
         />
         <button onClick={handleClick}>Add</button>
-        <CitiesList list={list} onRemoveClick={handleRemoveClick} />
+        <CityList list={list} onRemoveClick={handleRemoveClick} />
       </div>
     </>
   );

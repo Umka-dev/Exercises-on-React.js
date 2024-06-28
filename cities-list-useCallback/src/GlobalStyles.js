@@ -1,19 +1,18 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
     background-color: #9ecfda;
     margin: 0;
-    padding: 0;
+    padding: 20px 0 20px 0;
     font-family: sans-serif;
-    font-size: 1em;
+    font-size: 1.2em;
     line-height: 1.5em;
     text-align: center;
   }
   button {
     padding: 10px 20px;
-    margin: 10px 5px;
-    font-size: 0.8em;
+    font-size: 0.7em;
     background-color: #1b9cd0;
     color: white;
     border: none;
@@ -23,12 +22,13 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       background-color: #2180aa;
     }
-}
+  }
 
   input.custom-input {
     padding: 10px;
-    margin: 20px 10px;
-    width: 10%;
+    margin: 10px;
+    width: 50%;
+    max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
