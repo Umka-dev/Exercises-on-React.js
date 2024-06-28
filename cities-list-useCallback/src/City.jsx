@@ -1,13 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import DeleteIcon from '@mui/icons-material/Delete';
+import React from "react";
+import styled from "styled-components";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CityItem = styled.li`
   cursor: pointer;
-  padding: 3px 10px;
+  padding: 5px 10px;
   list-style: decimal;
   display: flex;
-  align-items: center;
+  align-items: left;
+  text-align: left;
   justify-content: space-between;
   &:hover {
     background-color: #eff5f8;
@@ -25,7 +26,7 @@ const DeleteButton = styled(DeleteIcon)`
 export const City = ({ city, onRemoveClick }) => {
   const handleCityClick = () => onRemoveClick(city);
 
-  console.log('Element render');
+  console.log("Element render");
 
   return (
     <CityItem>
