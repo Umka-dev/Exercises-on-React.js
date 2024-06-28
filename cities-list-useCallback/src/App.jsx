@@ -21,7 +21,6 @@ const App = () => {
   const handleRemoveClick = useCallback(
     (item) => {
       const filteredList = list.filter((listItem) => listItem !== item);
-
       setList(filteredList);
     },
     [list]
@@ -32,6 +31,7 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
+      <h1>Editable list of cities</h1>
       <div>
         <input
           className='custom-input'

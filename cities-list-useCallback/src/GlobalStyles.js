@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
   }
   button {
     padding: 10px 20px;
-    margin: 20px 10px;
+    margin: 10px 5px;
     font-size: 0.8em;
     background-color: #1b9cd0;
     color: white;
@@ -23,11 +23,12 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       background-color: #2180aa;
     }
+}
 
   input.custom-input {
     padding: 10px;
-    margin: 30px 10px;
-    width: 100%;
+    margin: 20px 10px;
+    width: 10%;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
