@@ -1,6 +1,7 @@
 import "./styles.css";
 import React, { useState, useCallback } from "react";
 import { CitiesList } from "./CitiesList";
+import GlobalStyles from "./GlobalStyles";
 
 const listOfCities = ["Lisbon", "Tokyo", "Berlin", "Rotterdam", "Jakarta"];
 
@@ -29,11 +30,19 @@ const App = () => {
   console.log("Page render");
 
   return (
-    <div className="App">
-      <input type="text" value={name} onChange={handleChange} />
-      <button onClick={handleClick}>Add</button>
-      <CitiesList list={list} onRemoveClick={handleRemoveClick} />
-    </div>
+    <>
+      <GlobalStyles />
+      <div>
+        <input
+          className="input"
+          type="text"
+          value={name}
+          onChange={handleChange}
+        />
+        <button onClick={handleClick}>Add</button>
+        <CitiesList list={list} onRemoveClick={handleRemoveClick} />
+      </div>
+    </>
   );
 };
 
