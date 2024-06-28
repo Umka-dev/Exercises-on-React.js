@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -9,8 +9,8 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1em;
     line-height: 1.5em;
     text-align: center;
-}
-button {
+  }
+  button {
     padding: 10px 20px;
     margin: 20px 10px;
     font-size: 0.8em;
@@ -24,7 +24,7 @@ button {
       background-color: #2180aa;
     }
 
-.input {
+  .input {
     padding: 10px;
     margin: 30px 10px;
     width: 100%;
