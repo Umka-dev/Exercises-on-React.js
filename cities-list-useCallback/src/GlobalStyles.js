@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
       background-color: #2180aa;
     }
 
-  .input {
+  input.custom-input {
     padding: 10px;
     margin: 30px 10px;
     width: 100%;

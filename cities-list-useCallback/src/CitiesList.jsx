@@ -2,10 +2,10 @@ import React from 'react';
 import { City } from './City';
 import styled from 'styled-components';
 
-const List = styled.list`
-  padding: 10px;
-  margin: 10px 0;
-  font-size: 3em;
+const List = styled.ul`
+  padding: 5px;
+  margin: 0;
+  font-size: 1em;
 `;
 
 export const CitiesList = React.memo(({ list, onRemoveClick }) => {

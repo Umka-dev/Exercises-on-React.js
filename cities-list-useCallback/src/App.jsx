@@ -34,7 +34,7 @@ const App = () => {
       <GlobalStyles />
       <div>
         <input
-          className='input'
+          className='custom-input'
           type='text'
           value={name}
           onChange={handleChange}
