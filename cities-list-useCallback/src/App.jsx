@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import Typography from '@mui/material/Typography';
 import { CityList } from './CityList';
 import GlobalStyles from './GlobalStyles';
 
