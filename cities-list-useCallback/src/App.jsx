@@ -44,7 +44,7 @@ const App = () => {
             xl: '4rem', // Size for xl screens
           },
           fontWeight: 'normal',
-          marginTop: 2,
+          marginTop: 10,
         }}
       >
         Editable City List
@@ -54,14 +54,18 @@ const App = () => {
           placeholder='Type the city name'
           variant='standard'
           sx={{
-            marginTop: 4,
-            marginBottom: 4,
+            marginTop: 8,
+            marginBottom: 6,
+            fontSize: '3em',
             minWidth: '320px',
             '& .MuiInput-underline:before': {
-              borderBottomColor: 'gray', // Цвет линии до фокуса
+              borderBottomColor: 'gray', // Line color before focus
             },
             '& .MuiInput-underline:after': {
-              borderBottomColor: '#1b9cd0', // Цвет линии при фокусе
+              borderBottomColor: '#1b9cd0', // Focus line color
+            },
+            '& .MuiInputBase-input': {
+              fontSize: '1.2em', // Font size for input text
             },
             '& .MuiInputBase-input::placeholder': {
               color: 'gray',
@@ -74,10 +78,11 @@ const App = () => {
         />
         <Button
           sx={{
-            marginTop: 4,
+            marginTop: 8,
             marginLeft: 2,
             backgroundColor: '#1b9cd0',
             color: 'white',
+            borderRadius: '20px',
             '&:hover': {
               backgroundColor: '#2180aa',
             },
