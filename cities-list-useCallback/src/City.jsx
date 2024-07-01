@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import DeleteIcon from "@mui/icons-material/Delete";
+import React from 'react';
+import styled from 'styled-components';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const CityItem = styled.li`
   cursor: pointer;
@@ -18,6 +18,7 @@ const CityItem = styled.li`
 
 const DeleteButton = styled(DeleteIcon)`
   visibility: hidden;
+  color: #1b9cd0;
   ${CityItem}:hover & {
     visibility: visible;
   }
@@ -26,7 +27,7 @@ const DeleteButton = styled(DeleteIcon)`
 export const City = ({ city, onRemoveClick }) => {
   const handleCityClick = () => onRemoveClick(city);
 
-  console.log("Element render");
+  console.log('Element render');
 
   return (
     <CityItem>

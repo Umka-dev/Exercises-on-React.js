@@ -1,4 +1,7 @@
 import React, { useState, useCallback } from 'react';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { CityList } from './CityList';
 import GlobalStyles from './GlobalStyles';
 
@@ -30,15 +33,64 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <h1>Editable list of cities</h1>
+      <Typography
+        variant='h1'
+        sx={{
+          fontSize: {
+            xs: '2rem', // Size for xs screens
+            sm: '2.5rem', // Size for sm screens sm
+            md: '3rem', // Size for md screens
+            lg: '3.5rem', // Size for lg screens
+            xl: '4rem', // Size for xl screens
+          },
+          fontWeight: 'normal',
+          marginTop: 10,
+        }}
+      >
+        Editable City List
+      </Typography>
       <div>
-        <input
-          className='custom-input'
+        <TextField
+          placeholder='Type the city name'
+          variant='standard'
+          sx={{
+            marginTop: 8,
+            marginBottom: 6,
+            fontSize: '3em',
+            minWidth: '320px',
+            '& .MuiInput-underline:before': {
+              borderBottomColor: 'gray', // Line color before focus
+            },
+            '& .MuiInput-underline:after': {
+              borderBottomColor: '#1b9cd0', // Focus line color
+            },
+            '& .MuiInputBase-input': {
+              fontSize: '1.2em', // Font size for input text
+            },
+            '& .MuiInputBase-input::placeholder': {
+              color: 'gray',
+            },
+          }}
+          // className='custom-input'
           type='text'
           value={name}
           onChange={handleChange}
         />
-        <button onClick={handleClick}>Add</button>
+        <Button
+          sx={{
+            marginTop: 8,
+            marginLeft: 2,
+            backgroundColor: '#1b9cd0',
+            color: 'white',
+            borderRadius: '20px',
+            '&:hover': {
+              backgroundColor: '#2180aa',
+            },
+          }}
+          onClick={handleClick}
+        >
+          Add
+        </Button>
         <CityList list={list} onRemoveClick={handleRemoveClick} />
       </div>
     </>
