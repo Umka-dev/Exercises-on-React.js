@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { CityList } from './CityList';
 import GlobalStyles from './GlobalStyles';
 
@@ -41,19 +43,49 @@ const App = () => {
             lg: '3.5rem', // Size for lg screens
             xl: '4rem', // Size for xl screens
           },
+          fontWeight: 'normal',
           marginTop: 2,
         }}
       >
         Editable City List
       </Typography>
       <div>
-        <input
-          className='custom-input'
+        <TextField
+          placeholder='Type the city name'
+          variant='standard'
+          sx={{
+            marginTop: 4,
+            marginBottom: 4,
+            minWidth: '320px',
+            '& .MuiInput-underline:before': {
+              borderBottomColor: 'gray', // Цвет линии до фокуса
+            },
+            '& .MuiInput-underline:after': {
+              borderBottomColor: '#1b9cd0', // Цвет линии при фокусе
+            },
+            '& .MuiInputBase-input::placeholder': {
+              color: 'gray',
+            },
+          }}
+          // className='custom-input'
           type='text'
           value={name}
           onChange={handleChange}
         />
-        <button onClick={handleClick}>Add</button>
+        <Button
+          sx={{
+            marginTop: 4,
+            marginLeft: 2,
+            backgroundColor: '#1b9cd0',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: '#2180aa',
+            },
+          }}
+          onClick={handleClick}
+        >
+          Add
+        </Button>
         <CityList list={list} onRemoveClick={handleRemoveClick} />
       </div>
     </>
