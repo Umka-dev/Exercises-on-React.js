@@ -12,6 +12,9 @@ const App = () => {
   const [list, setList] = useState(listOfCities);
 
   const handleClick = () => {
+    if (name.trim() === '') {
+      return; // Don't add an empty value
+    }
     setList([...list, name]);
     setName('');
   };
@@ -71,11 +74,11 @@ const App = () => {
               color: 'gray',
             },
           }}
-          // className='custom-input'
           type='text'
           value={name}
           onChange={handleChange}
         />
+
         <Button
           sx={{
             marginTop: 8,
