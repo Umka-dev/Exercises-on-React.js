@@ -31,7 +31,21 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <h1>Editable City List</h1>
+      <Typography
+        variant='h1'
+        sx={{
+          fontSize: {
+            xs: '2rem', // Size for xs screens
+            sm: '2.5rem', // Size for sm screens sm
+            md: '3rem', // Size for md screens
+            lg: '3.5rem', // Size for lg screens
+            xl: '4rem', // Size for xl screens
+          },
+          marginTop: 2,
+        }}
+      >
+        Editable City List
+      </Typography>
       <div>
         <input
           className='custom-input'
