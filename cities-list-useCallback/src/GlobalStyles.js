@@ -27,8 +27,9 @@ const GlobalStyles = createGlobalStyle`
   input.custom-input {
     padding: 10px;
     margin: 10px;
-    width: 50%;
-    max-width: 400px;
+    width: 30%;
+    min-width: 240px;
+    max-width: 320px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }

@@ -8,7 +8,7 @@ const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 600px;
+  max-width: 460px !important;
   margin: auto;
   padding: 16px;
 `;
