@@ -30,7 +30,7 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <h1>Editable list of cities</h1>
+      <h1>Editable City List</h1>
       <div>
         <input
           className='custom-input'
