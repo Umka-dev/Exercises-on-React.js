@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { CityList } from './CityList';
-import GlobalStyles from './GlobalStyles';
 
 const CITY_LIST = ['Lisbon', 'Tokyo', 'Berlin', 'Rotterdam', 'Jakarta'];
 
@@ -39,7 +39,19 @@ const App = () => {
 
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles
+        styles={{
+          body: {
+            margin: '0',
+            padding: '0',
+            fontFamily: 'sans-serif',
+            textAlign: 'center',
+            fontSize: '1.2em',
+            lineHeight: '1.5em',
+            backgroundColor: '#9ecfda',
+          },
+        }}
+      />
       <Typography
         variant='h1'
         sx={{
