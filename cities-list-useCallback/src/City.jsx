@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const CityItem = styled.li`
+const StyledItem = styled.li`
   cursor: pointer;
   padding: 5px 10px;
   list-style: decimal;
@@ -19,7 +19,7 @@ const CityItem = styled.li`
 const DeleteButton = styled(DeleteIcon)`
   visibility: hidden;
   color: #1b9cd0;
-  ${CityItem}:hover & {
+  ${StyledItem}:hover & {
     visibility: visible;
   }
 `;
@@ -30,9 +30,9 @@ export const City = ({ city, onRemoveClick }) => {
   console.log('Element render');
 
   return (
-    <CityItem>
+    <StyledItem>
       {city}
       <DeleteButton onClick={handleCityClick} />
-    </CityItem>
+    </StyledItem>
   );
 };
