@@ -1,41 +1,57 @@
 import React, { useState, useCallback } from 'react';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { CityList } from './CityList';
-import GlobalStyles from './GlobalStyles';
 
-const listOfCities = ['Lisbon', 'Tokyo', 'Berlin', 'Rotterdam', 'Jakarta'];
+const CITY_LIST = ['Lisbon', 'Tokyo', 'Berlin', 'Rotterdam', 'Jakarta'];
 
 const App = () => {
-  const [name, setName] = useState('');
-  const [list, setList] = useState(listOfCities);
+  const [cityName, setCityName] = useState('');
+  const [cityList, setCityList] = useState(CITY_LIST);
+
+  setTimeout(() => {
+    console.log('Page render');
+  }, 5000);
 
   const handleClick = () => {
-    if (name.trim() === '') {
+    if (cityName.trim() === '') {
       return; // Don't add an empty value
     }
-    setList([...list, name]);
-    setName('');
+    setCityList([...cityList, cityName]);
+    setCityName('');
   };
 
   const handleChange = (event) => {
-    setName(event.target.value);
+    setCityName(event.target.value);
   };
 
   const handleRemoveClick = useCallback(
-    (item) => {
-      const filteredList = list.filter((listItem) => listItem !== item);
-      setList(filteredList);
+    (city) => {
+      const filteredCityList = cityList.filter((listItem) => listItem !== city);
+      setCityList(filteredCityList);
     },
-    [list]
+    [cityList]
   );
 
   console.log('Page render');
 
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles
+        styles={{
+          body: {
+            margin: '0',
+            padding: '0',
+            fontFamily: 'sans-serif',
+            textAlign: 'center',
+            fontSize: '1.2em',
+            lineHeight: '1.5em',
+            backgroundColor: '#9ecfda',
+          },
+        }}
+      />
       <Typography
         variant='h1'
         sx={{
@@ -75,7 +91,7 @@ const App = () => {
             },
           }}
           type='text'
-          value={name}
+          value={cityName}
           onChange={handleChange}
         />
 
@@ -94,7 +110,7 @@ const App = () => {
         >
           Add
         </Button>
-        <CityList list={list} onRemoveClick={handleRemoveClick} />
+        <CityList list={cityList} onRemoveClick={handleRemoveClick} />
       </div>
     </>
   );
