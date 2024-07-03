@@ -9,7 +9,7 @@ const StyledItem = styled(ListItem)`
     background-color: #eff5f8;
     border-radius: 10px;
   }
-  button {
+  & button {
     visibility: hidden;
     color: #1b9cd0;
   }
