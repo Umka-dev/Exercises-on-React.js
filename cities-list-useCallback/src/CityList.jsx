@@ -1,28 +1,91 @@
-import React from 'react';
-import { City } from './City';
-import Container from '@mui/material/Container';
-import List from '@mui/material/List';
+import React, { useState } from 'react';
+import { Container, TextField, Button, List } from '@mui/material';
 import styled from 'styled-components';
+import City from './City';
 
-const StyledList = styled(List)`
-  text-align: left;
-  width: 100%;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 0;
-  font-size: 1em;
+const StyledTextField = styled(TextField)`
+  min-width: 190px;
+  // max-width: 310px;
+  width: 68%; // Initial width value
+
+  & .MuiInputLabel-root {
+    color: gray; // Default Label Color
+  }
+
+  & .MuiFormLabel-root.Mui-focused {
+    color: #1b9cd0; // Focus Label Color
+  }
+
+  & .MuiInput-underline:before {
+    border-bottom-color: gray; // Line color before focus
+  }
+
+  & .MuiInput-underline:after {
+    border-bottom-color: #1b9cd0; // Focus line color
+  }
+
+  & .MuiInputBase-input {
+    font-size: 1.2em; // Font size for input text
+  }
+
+  @media (min-width: 600px) {
+    width: 310px; // Width on large screens
+  }
 `;
 
-export const CityList = React.memo(({ list, onRemoveClick }) => {
-  console.log('List render');
+const StyledButton = styled(Button)`
+  && {
+    margin-top: 16px;
+    margin-left: 16px;
+    padding: 10px 20px;
+    line-height: normal;
+    background-color: #1b9cd0;
+    border-radius: 20px;
+    &:hover {
+      background-color: #2180aa;
+    }
+  }
+`;
+
+const CityList = React.memo(({ cityList, addCity, deleteCity }) => {
+  const [newCity, setNewCity] = useState('');
+
+  const handleInputChange = (event) => {
+    setNewCity(event.target.value);
+  };
+
+  const handleAddCity = () => {
+    addCity(newCity);
+    setNewCity('');
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleAddCity();
+    }
+  };
 
   return (
     <Container maxWidth='xs'>
-      <StyledList>
-        {list.map((item) => (
-          <City key={item} city={item} onRemoveClick={onRemoveClick} />
+      <StyledTextField
+        label='Add city'
+        value={newCity}
+        variant='standard'
+        type='text'
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+      />
+      <StyledButton variant='contained' color='primary' onClick={handleAddCity}>
+        Add
+      </StyledButton>
+      <List style={{ marginTop: '24px' }}>
+        {cityList.map((city, index) => (
+          <City key={index} city={city} deleteCity={deleteCity} />
         ))}
-      </StyledList>
+      </List>
     </Container>
   );
 });
+
+export default CityList;
