@@ -5,26 +5,27 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { CityList } from './CityList';
 
-const CITY_LIST = ['Lisbon', 'Tokyo', 'Berlin', 'Rotterdam', 'Jakarta'];
+const CITY_LIST = ['Lisboa', 'Tokyo', 'Berlin', 'Amsterdam', 'Madrid'];
 
 const App = () => {
-  const [cityName, setCityName] = useState('');
   const [cityList, setCityList] = useState(CITY_LIST);
-
-  setTimeout(() => {
-    console.log('Page render');
-  }, 5000);
-
-  const handleClick = () => {
-    if (cityName.trim() === '') {
-      return; // Don't add an empty value
-    }
-    setCityList([...cityList, cityName]);
-    setCityName('');
-  };
+  const [newCity, setNewCity] = useState('');
 
   const handleChange = (event) => {
-    setCityName(event.target.value);
+    setNewCity(event.target.value);
+  };
+
+  const handleAddCity = () => {
+    if (newCity.trim() !== '' && !cityList.includes(newCity.trim())) {
+      setCityList([...cityList, newCity.trim()]);
+      setNewCity('');
+    }
+  };
+
+  const handleOnKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleAddCity();
+    }
   };
 
   const handleRemoveClick = useCallback(
@@ -91,8 +92,9 @@ const App = () => {
             },
           }}
           type='text'
-          value={cityName}
+          value={newCity}
           onChange={handleChange}
+          onKeyDown={handleOnKeyDown}
         />
 
         <Button
@@ -106,7 +108,7 @@ const App = () => {
               backgroundColor: '#2180aa',
             },
           }}
-          onClick={handleClick}
+          onClick={handleAddCity}
         >
           Add
         </Button>
