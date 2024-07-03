@@ -5,16 +5,23 @@ import City from './City';
 
 const StyledTextField = styled(TextField)`
   min-width: 190px;
-  // max-width: 310px;
   width: 68%; // Initial width value
 
-  & .MuiInputLabel-root {
-    color: gray; // Default Label Color
+  & label {
+    color: gray;
   }
 
-  & .MuiFormLabel-root.Mui-focused {
-    color: #1b9cd0; // Focus Label Color
+  &:focus-within label {
+    color: #1b9cd0;
   }
+
+  // & .MuiInputLabel-root {
+  //   color: gray; // Default Label Color
+  // }
+
+  // & .MuiFormLabel-root.Mui-focused {
+  //   color: #1b9cd0; // Focus Label Color
+  // }
 
   & .MuiInput-underline:before {
     border-bottom-color: gray; // Line color before focus
