@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GlobalStyles from '@mui/material/GlobalStyles';
-import styled from 'styled-components';
+import { styled } from '@mui/system';
 import { Container, Typography } from '@mui/material';
 import CityList from './CityList';
 
